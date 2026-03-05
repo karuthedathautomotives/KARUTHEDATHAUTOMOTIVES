@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Car Booking</title>
+
+<link rel="stylesheet" href="style.css">
+
+<script>
+
+function pricePopup(){
+
+let type=document.getElementById("type").value;
+
+if(type=="driver"){
+alert("₹20 per KM up to 200 KM. Extra KM ₹10 per KM.");
+}
+
+if(type=="self"){
+alert("₹950 per day. Extra after 200 KM ₹10 per KM.");
+}
+
+}
+
+function sendBooking(){
+
+alert("Half of the payment should be made during booking or pickup time.");
+
+let name=document.getElementById("name").value
+let address=document.getElementById("address").value
+let phone=document.getElementById("phone").value
+let from=document.getElementById("from").value
+let to=document.getElementById("to").value
+let km=document.getElementById("km").value
+let type=document.getElementById("type").value
+
+let message =
+"🚗 KARUTHEDATH AUTOMOTIVES BOOKING %0A%0A"+
+"Name: "+name+"%0A"+
+"Address: "+address+"%0A"+
+"Phone: "+phone+"%0A"+
+"Travelling From: "+from+"%0A"+
+"Travelling To: "+to+"%0A"+
+"Approx KM: "+km+"%0A"+
+"Category: "+type
+
+window.open("https://wa.me/917012333356?text="+message)
+
+}
+
+</script>
+
+</head>
+
+<body>
+
+<div style="max-width:500px;margin:auto;padding:30px">
+
+<h2>Book Your Car</h2>
+
+<input id="name" placeholder="Name"><br><br>
+
+<input id="address" placeholder="Address"><br><br>
+
+<input id="phone" placeholder="Phone Number"><br><br>
+
+<input id="from" placeholder="Travelling From"><br><br>
+
+<input id="to" placeholder="Travelling To"><br><br>
+
+<input id="km" placeholder="Approx KM"><br><br>
+
+<select id="type" onchange="pricePopup()">
+
+<option>Select Category</option>
+<option value="driver">With Driver</option>
+<option value="self">Self Driving</option>
+
+</select>
+
+<br><br>
+
+<button onclick="sendBooking()">Send Booking to WhatsApp</button>
+
+</div>
+
+</body>
+
+</html>
